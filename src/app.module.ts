@@ -5,6 +5,7 @@ import { UsersModule } from './users/users.module';
 import {ConfigModule} from '@nestjs/config';
 import {GraphQLModule} from "@nestjs/graphql";
 import {ApolloDriver, ApolloDriverConfig} from "@nestjs/apollo";
+import {DatabaseModule} from "./config/db.config";
 
 @Module({
   imports: [
@@ -16,6 +17,7 @@ import {ApolloDriver, ApolloDriverConfig} from "@nestjs/apollo";
       driver: ApolloDriver,
       autoSchemaFile: true,
     }),
+    DatabaseModule, 
     UsersModule],
   controllers: [AppController],
   providers: [AppService],

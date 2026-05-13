@@ -1,0 +1,13 @@
+@baseUrl=http://localhost:8000/graphql
+
+### get all users
+POST {{baseUrl}}
+Content-Type: application/json
+
+{
+  "query": "query { users { id name email } }"
+}
+
+
+###
+GET https://server.naksyetu.co.ke/api/v1/events/upcoming?page=1&limit=24
