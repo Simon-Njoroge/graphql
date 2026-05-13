@@ -23,7 +23,7 @@ import { TypeOrmModule, TypeOrmModuleOptions } from '@nestjs/typeorm';
             database: configService.getOrThrow<string>('DB_DATABASE'),
             entities: [__dirname + '/../**/*.entity{.ts,.js}'],
             synchronize: configService.get<boolean>('DB_SYNC', true),
-            dropSchema: configService.get<boolean>('DB_DROP_SCHEMA', false),
+            dropSchema: configService.get<boolean>('DB_DROP_SCHEMA', true),
             logging: configService.get<boolean>('DB_LOGGING', false),
             ssl:
               configService.get<string>('DB_SSL', 'true') === 'true'
